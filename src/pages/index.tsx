@@ -3,10 +3,12 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { GetServerSideProps } from 'next'
+import { userAgent } from 'next/server'
 
 const inter = Inter({ subsets: ['latin'] })
 
 function Home(props: any) {
+  console.log(' userAgent ::: ', userAgent)
   console.log('props ::: ', props)
   
   return (
