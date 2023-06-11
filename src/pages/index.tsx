@@ -8,8 +8,8 @@ import { userAgent } from 'next/server'
 const inter = Inter({ subsets: ['latin'] })
 
 function Home(props: any) {
-  console.log(' userAgent ::: ', userAgent)
   console.log('props ::: ', props)
+  // console.log(' userAgent ::: ', userAgent(props?.context))
   
   return (
     <>
@@ -130,7 +130,7 @@ function Home(props: any) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
-      context: context,
+      context: context?.req?.headers,
     },
   }
 }
